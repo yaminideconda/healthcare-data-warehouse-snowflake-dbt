@@ -1,0 +1,14 @@
+version: 2
+
+models:
+  - name: claims_summary
+    description: "Aggregates claim-level data by provider to show total and average claim amounts."
+    columns:
+      - name: PROVIDER_ID
+        description: "Unique identifier for the provider."
+      - name: TOTAL_CLAIMS
+        description: "Total number of distinct claims handled by the provider."
+      - name: TOTAL_AMOUNT
+        description: "Sum of all claim amounts for the provider."
+      - name: AVG_CLAIM_AMOUNT
+        description: "Average claim value across all claims by the provider."

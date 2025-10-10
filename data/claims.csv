@@ -1,0 +1,6 @@
+claim_id,patient_id,provider_id,amount,claim_date,status
+1001,1,101,250.00,2024-07-12,Approved
+1002,2,103,180.00,2024-07-13,Denied
+1003,3,102,300.00,2024-07-14,Approved
+1004,4,104,420.00,2024-07-15,Pending
+1005,5,105,260.00,2024-07-16,Approved

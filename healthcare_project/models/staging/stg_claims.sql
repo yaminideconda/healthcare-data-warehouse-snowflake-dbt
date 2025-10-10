@@ -1,0 +1,8 @@
+select
+    CLAIM_ID,
+    PATIENT_ID,
+    PROVIDER_ID,
+    AMOUNT,
+    CLAIM_DATE,
+    upper(STATUS) as CLAIM_STATUS
+from HEALTHCARE_DB.RAW.CLAIMS

@@ -1,0 +1,18 @@
+version: 2
+
+models:
+  - name: stg_claims
+    description: "Cleans and standardizes raw healthcare claims data from the RAW schema."
+    columns:
+      - name: CLAIM_ID
+        description: "Unique identifier for each healthcare claim."
+      - name: PATIENT_ID
+        description: "Unique identifier for the patient associated with the claim."
+      - name: PROVIDER_ID
+        description: "Unique identifier for the healthcare provider handling the claim."
+      - name: AMOUNT
+        description: "Monetary value billed for the claim."
+      - name: CLAIM_DATE
+        description: "Date when the claim was submitted or processed."
+      - name: CLAIM_STATUS
+        description: "Standardized claim status (uppercase) indicating approval, pending, or denial."

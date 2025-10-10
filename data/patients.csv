@@ -1,0 +1,6 @@
+patient_id,first_name,last_name,gender,age,city,state
+1,John,Doe,M,45,Dallas,TX
+2,Jane,Smith,F,36,Austin,TX
+3,Michael,Brown,M,60,Columbus,OH
+4,Sophia,White,F,29,Houston,TX
+5,David,Patel,M,52,San Antonio,TX

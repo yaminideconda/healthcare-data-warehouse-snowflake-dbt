@@ -1,0 +1,6 @@
+condition_id,patient_id,condition_name,severity
+501,1,Hypertension,Moderate
+502,2,Asthma,Mild
+503,3,Diabetes,Severe
+504,4,Migraine,Mild
+505,5,Arthritis,Moderate

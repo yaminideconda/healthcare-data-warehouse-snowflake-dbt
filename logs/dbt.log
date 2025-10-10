@@ -1,0 +1,184 @@
+[0m13:22:47.681711 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001F1BA5C4980>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001F1BB051090>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001F1BB68FED0>]}
+
+
+============================== 13:22:47.688253 | 6f702562-b27e-4968-8ad5-34f40504a564 ==============================
+[0m13:22:47.688253 [info ] [MainThread]: Running with dbt=1.11.0-b3
+[0m13:22:47.689161 [debug] [MainThread]: running dbt with arguments {'partial_parse': 'True', 'write_json': 'True', 'send_anonymous_usage_stats': 'True', 'use_colors': 'True', 'cache_selected_only': 'False', 'target_path': 'None', 'warn_error': 'None', 'invocation_command': 'dbt init healthcare_project', 'log_format': 'default', 'version_check': 'True', 'introspect': 'True', 'debug': 'False', 'log_cache_events': 'False', 'fail_fast': 'False', 'no_print': 'None', 'quiet': 'False', 'printer_width': '80', 'use_experimental_parser': 'False', 'empty': 'None', 'log_path': 'logs', 'indirect_selection': 'eager', 'profiles_dir': 'C:\\Users\\yamin\\.dbt', 'static_parser': 'True', 'warn_error_options': 'WarnErrorOptionsV2(error=[], warn=[], silence=[])'}
+[0m13:22:47.756119 [info ] [MainThread]: Creating dbt configuration folder at C:\Users\yamin\.dbt
+[0m13:22:47.771242 [debug] [MainThread]: Starter project path: C:\Users\yamin\OneDrive\Documents\healthcare-data-warehouse-snowflake-dbt\venv\Lib\site-packages\dbt\include\starter_project
+[0m13:22:47.836324 [info ] [MainThread]: 
+Your new dbt project "healthcare_project" was created!
+
+For more information on how to configure the profiles.yml file,
+please consult the dbt documentation here:
+
+  https://docs.getdbt.com/docs/configure-your-profile
+
+One more thing:
+
+Need help? Don't hesitate to reach out to us via GitHub issues or on Slack:
+
+  https://community.getdbt.com/
+
+Happy modeling!
+
+[0m13:22:47.837324 [info ] [MainThread]: Setting up your profile.
+[0m13:27:24.805406 [error] [MainThread]: Encountered an error:
+
+[0m13:27:25.351111 [error] [MainThread]: Traceback (most recent call last):
+  File "C:\Users\yamin\OneDrive\Documents\healthcare-data-warehouse-snowflake-dbt\venv\Lib\site-packages\dbt\cli\requires.py", line 178, in wrapper
+    result, success = func(*args, **kwargs)
+                      ~~~~^^^^^^^^^^^^^^^^^
+  File "C:\Users\yamin\OneDrive\Documents\healthcare-data-warehouse-snowflake-dbt\venv\Lib\site-packages\dbt\cli\requires.py", line 128, in wrapper
+    return func(*args, **kwargs)
+  File "C:\Users\yamin\OneDrive\Documents\healthcare-data-warehouse-snowflake-dbt\venv\Lib\site-packages\dbt\cli\main.py", line 483, in init
+    results = task.run()
+  File "C:\Users\yamin\OneDrive\Documents\healthcare-data-warehouse-snowflake-dbt\venv\Lib\site-packages\dbt\task\init.py", line 346, in run
+    self.setup_profile(profile_name)
+    ~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^
+  File "C:\Users\yamin\OneDrive\Documents\healthcare-data-warehouse-snowflake-dbt\venv\Lib\site-packages\dbt\task\init.py", line 262, in setup_profile
+    self.create_profile_from_target(adapter, profile_name=profile_name)
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\yamin\OneDrive\Documents\healthcare-data-warehouse-snowflake-dbt\venv\Lib\site-packages\dbt\task\init.py", line 179, in create_profile_from_target
+    self.create_profile_from_profile_template(profile_template, profile_name)
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\yamin\OneDrive\Documents\healthcare-data-warehouse-snowflake-dbt\venv\Lib\site-packages\dbt\task\init.py", line 163, in create_profile_from_profile_template
+    target = self.generate_target_from_input(prompts, initial_target)
+  File "C:\Users\yamin\OneDrive\Documents\healthcare-data-warehouse-snowflake-dbt\venv\Lib\site-packages\dbt\task\init.py", line 129, in generate_target_from_input
+    target[key] = click.prompt(
+                  ~~~~~~~~~~~~^
+        text, default=default, hide_input=hide_input, type=type
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "C:\Users\yamin\OneDrive\Documents\healthcare-data-warehouse-snowflake-dbt\venv\Lib\site-packages\click\termui.py", line 168, in prompt
+    value = prompt_func(prompt)
+  File "C:\Users\yamin\OneDrive\Documents\healthcare-data-warehouse-snowflake-dbt\venv\Lib\site-packages\click\termui.py", line 151, in prompt_func
+    raise Abort() from None
+click.exceptions.Abort
+
+[0m13:27:25.380334 [debug] [MainThread]: Command `dbt init` failed at 13:27:25.378280 after 277.84 seconds
+[0m13:27:25.387984 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001F1CC8E0FC0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001F1CC8D4EF0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001F1CC8A9150>]}
+[0m13:27:25.395956 [debug] [MainThread]: Flushing usage events
+[0m13:27:26.816410 [debug] [MainThread]: An error was encountered while trying to flush usage events
+[0m13:35:58.599429 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x00000202287B4980>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000020229240F50>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x00000202298B3D90>]}
+
+
+============================== 13:35:58.609854 | ae42c2c9-4900-4dce-b623-f8dbb4e74764 ==============================
+[0m13:35:58.609854 [info ] [MainThread]: Running with dbt=1.11.0-b3
+[0m13:35:58.611057 [debug] [MainThread]: running dbt with arguments {'partial_parse': 'True', 'warn_error_options': 'WarnErrorOptionsV2(error=[], warn=[], silence=[])', 'send_anonymous_usage_stats': 'True', 'version_check': 'True', 'cache_selected_only': 'False', 'target_path': 'None', 'use_colors': 'True', 'invocation_command': 'dbt init healthcare_project', 'log_format': 'default', 'warn_error': 'None', 'introspect': 'True', 'debug': 'False', 'log_cache_events': 'False', 'fail_fast': 'False', 'no_print': 'None', 'use_experimental_parser': 'False', 'quiet': 'False', 'empty': 'None', 'printer_width': '80', 'log_path': 'logs', 'indirect_selection': 'eager', 'write_json': 'True', 'static_parser': 'True', 'profiles_dir': 'C:\\Users\\yamin\\.dbt'}
+[0m13:35:58.652671 [info ] [MainThread]: A project called healthcare_project already exists here.
+[0m13:35:58.653872 [debug] [MainThread]: Command `dbt init` succeeded at 13:35:58.653727 after 0.31 seconds
+[0m13:35:58.654353 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x00000202298FE650>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x00000202299A84D0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000020229761590>]}
+[0m13:35:58.654787 [debug] [MainThread]: Flushing usage events
+[0m13:35:59.260808 [debug] [MainThread]: An error was encountered while trying to flush usage events
+[0m14:08:36.630380 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000015341194980>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000015341C24F50>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000015342293D90>]}
+
+
+============================== 14:08:36.643363 | 920aba8b-e0a7-4487-929c-0550e27f5495 ==============================
+[0m14:08:36.643363 [info ] [MainThread]: Running with dbt=1.11.0-b3
+[0m14:08:36.645736 [debug] [MainThread]: running dbt with arguments {'partial_parse': 'True', 'static_parser': 'True', 'send_anonymous_usage_stats': 'True', 'warn_error': 'None', 'cache_selected_only': 'False', 'target_path': 'None', 'version_check': 'True', 'invocation_command': 'dbt debug', 'log_format': 'default', 'use_colors': 'True', 'introspect': 'True', 'debug': 'False', 'log_cache_events': 'False', 'fail_fast': 'False', 'no_print': 'None', 'use_experimental_parser': 'False', 'quiet': 'False', 'empty': 'None', 'printer_width': '80', 'log_path': 'logs', 'indirect_selection': 'eager', 'profiles_dir': 'C:\\Users\\yamin\\.dbt', 'warn_error_options': 'WarnErrorOptionsV2(error=[], warn=[], silence=[])', 'write_json': 'True'}
+[0m14:08:36.701049 [info ] [MainThread]: dbt version: 1.11.0-b3
+[0m14:08:36.701624 [info ] [MainThread]: python version: 3.13.7
+[0m14:08:36.702012 [info ] [MainThread]: python path: C:\Users\yamin\OneDrive\Documents\healthcare-data-warehouse-snowflake-dbt\venv\Scripts\python.exe
+[0m14:08:36.702391 [info ] [MainThread]: os info: Windows-11-10.0.26100-SP0
+[0m14:08:39.052129 [info ] [MainThread]: Using profiles dir at C:\Users\yamin\.dbt
+[0m14:08:39.052887 [info ] [MainThread]: Using profiles.yml file at C:\Users\yamin\.dbt\profiles.yml
+[0m14:08:39.053352 [info ] [MainThread]: Using dbt_project.yml file at C:\Users\yamin\OneDrive\Documents\healthcare-data-warehouse-snowflake-dbt\dbt_project.yml
+[0m14:08:39.057629 [info ] [MainThread]: adapter type: snowflake
+[0m14:08:39.058283 [info ] [MainThread]: adapter version: 1.10.2
+[0m14:08:39.058871 [info ] [MainThread]: Configuration:
+[0m14:08:39.059372 [info ] [MainThread]:   profiles.yml file [[32mOK found and valid[0m]
+[0m14:08:39.059797 [info ] [MainThread]:   dbt_project.yml file [[31mERROR not found[0m]
+[0m14:08:39.060258 [info ] [MainThread]: Required dependencies:
+[0m14:08:39.060769 [debug] [MainThread]: Executing "git --help"
+[0m14:08:39.067425 [info ] [MainThread]:  - git [[31mERROR[0m]
+
+[0m14:08:39.068168 [info ] [MainThread]: Connection:
+[0m14:08:39.068844 [info ] [MainThread]:   account: KSOAIUG-TG79516
+[0m14:08:39.069421 [info ] [MainThread]:   user: YAMINI
+[0m14:08:39.069932 [info ] [MainThread]:   database: HEALTHCARE_DB
+[0m14:08:39.070397 [info ] [MainThread]:   warehouse: COMPUTE_WH
+[0m14:08:39.070849 [info ] [MainThread]:   role: ACCOUNTADMIN
+[0m14:08:39.071370 [info ] [MainThread]:   schema: TRANSFORMED
+[0m14:08:39.071810 [info ] [MainThread]:   authenticator: None
+[0m14:08:39.072128 [info ] [MainThread]:   oauth_client_id: None
+[0m14:08:39.072463 [info ] [MainThread]:   query_tag: None
+[0m14:08:39.072858 [info ] [MainThread]:   client_session_keep_alive: False
+[0m14:08:39.073239 [info ] [MainThread]:   host: None
+[0m14:08:39.073531 [info ] [MainThread]:   port: None
+[0m14:08:39.073894 [info ] [MainThread]:   proxy_host: None
+[0m14:08:39.074293 [info ] [MainThread]:   proxy_port: None
+[0m14:08:39.074685 [info ] [MainThread]:   protocol: None
+[0m14:08:39.075107 [info ] [MainThread]:   connect_retries: 1
+[0m14:08:39.075589 [info ] [MainThread]:   connect_timeout: None
+[0m14:08:39.076109 [info ] [MainThread]:   retry_on_database_errors: False
+[0m14:08:39.076623 [info ] [MainThread]:   retry_all: False
+[0m14:08:39.077120 [info ] [MainThread]:   insecure_mode: False
+[0m14:08:39.077575 [info ] [MainThread]:   reuse_connections: True
+[0m14:08:39.077982 [info ] [MainThread]:   s3_stage_vpce_dns_name: None
+[0m14:08:39.078943 [info ] [MainThread]: Registered adapter: snowflake=1.10.2
+[0m14:08:40.479411 [debug] [MainThread]: Acquiring new snowflake connection 'debug'
+[0m14:08:45.676200 [debug] [MainThread]: Using snowflake connection "debug"
+[0m14:08:45.677494 [debug] [MainThread]: On debug: select 1 as id
+[0m14:08:45.678464 [debug] [MainThread]: Opening a new connection, currently in state init
+[0m14:08:50.358520 [debug] [MainThread]: SQL status: SUCCESS 1 in 4.680 seconds
+[0m14:08:50.359571 [info ] [MainThread]:   Connection test: [[32mOK connection ok[0m]
+
+[0m14:08:50.360409 [info ] [MainThread]: [31m2 checks failed:[0m
+[0m14:08:50.361056 [info ] [MainThread]: Project loading failed for the following reason:
+ project path <C:\Users\yamin\OneDrive\Documents\healthcare-data-warehouse-snowflake-dbt\dbt_project.yml> not found
+
+[0m14:08:50.361619 [info ] [MainThread]: Error from git --help: Could not find command, ensure it is in the user's PATH and that the user has permissions to run it: "git"
+
+[0m14:08:50.363297 [debug] [MainThread]: Command `dbt debug` failed at 14:08:50.362972 after 14.14 seconds
+[0m14:08:50.364230 [debug] [MainThread]: Connection 'debug' was left open.
+[0m14:08:50.365092 [debug] [MainThread]: On debug: Close
+[0m14:08:50.501012 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000015354CE1810>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000015354A04B90>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001535444AE00>]}
+[0m14:08:50.502838 [debug] [MainThread]: Flushing usage events
+[0m14:08:51.189187 [debug] [MainThread]: An error was encountered while trying to flush usage events
+[0m22:14:31.232680 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x00000271B2524980>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x00000271B2FB8F50>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x00000271B362FD90>]}
+
+
+============================== 22:14:31.243399 | 82443056-ecc8-4687-a212-933d976705cd ==============================
+[0m22:14:31.243399 [info ] [MainThread]: Running with dbt=1.11.0-b3
+[0m22:14:31.244666 [debug] [MainThread]: running dbt with arguments {'partial_parse': 'True', 'warn_error_options': 'WarnErrorOptionsV2(error=[], warn=[], silence=[])', 'send_anonymous_usage_stats': 'True', 'warn_error': 'None', 'cache_selected_only': 'False', 'target_path': 'None', 'use_colors': 'True', 'invocation_command': 'dbt run', 'log_format': 'default', 'version_check': 'True', 'introspect': 'True', 'debug': 'False', 'printer_width': '80', 'fail_fast': 'False', 'no_print': 'None', 'use_experimental_parser': 'False', 'empty': 'False', 'quiet': 'False', 'log_cache_events': 'False', 'log_path': 'logs', 'indirect_selection': 'eager', 'profiles_dir': 'C:\\Users\\yamin\\.dbt', 'static_parser': 'True', 'write_json': 'True'}
+[0m22:14:31.245235 [error] [MainThread]: Encountered an error:
+Runtime Error
+  No dbt_project.yml found at expected path C:\Users\yamin\OneDrive\Documents\healthcare-data-warehouse-snowflake-dbt\dbt_project.yml
+  Verify that each entry within packages.yml (and their transitive dependencies) contains a file named dbt_project.yml
+  
+[0m22:14:31.246053 [debug] [MainThread]: Command `dbt run` failed at 22:14:31.245945 after 0.24 seconds
+[0m22:14:31.246440 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x00000271B366D350>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x00000271B36C4050>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x00000271B34D9590>]}
+[0m22:14:31.246837 [debug] [MainThread]: Flushing usage events
+[0m22:14:31.886948 [debug] [MainThread]: An error was encountered while trying to flush usage events
+[0m22:15:12.333042 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x00000158BAF74980>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x00000158BBA08F50>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x00000158BC07FD90>]}
+
+
+============================== 22:15:12.340398 | b6a87468-caa3-4234-824a-92e580520505 ==============================
+[0m22:15:12.340398 [info ] [MainThread]: Running with dbt=1.11.0-b3
+[0m22:15:12.342135 [debug] [MainThread]: running dbt with arguments {'partial_parse': 'True', 'static_parser': 'True', 'send_anonymous_usage_stats': 'True', 'version_check': 'True', 'cache_selected_only': 'False', 'target_path': 'None', 'warn_error': 'None', 'invocation_command': 'dbt run', 'log_format': 'default', 'use_colors': 'True', 'introspect': 'True', 'debug': 'False', 'printer_width': '80', 'fail_fast': 'False', 'no_print': 'None', 'use_experimental_parser': 'False', 'empty': 'False', 'quiet': 'False', 'log_cache_events': 'False', 'indirect_selection': 'eager', 'log_path': 'logs', 'profiles_dir': 'C:\\Users\\yamin\\.dbt', 'warn_error_options': 'WarnErrorOptionsV2(error=[], warn=[], silence=[])', 'write_json': 'True'}
+[0m22:15:12.342573 [error] [MainThread]: Encountered an error:
+Runtime Error
+  No dbt_project.yml found at expected path C:\Users\yamin\OneDrive\Documents\healthcare-data-warehouse-snowflake-dbt\dbt_project.yml
+  Verify that each entry within packages.yml (and their transitive dependencies) contains a file named dbt_project.yml
+  
+[0m22:15:12.343457 [debug] [MainThread]: Command `dbt run` failed at 22:15:12.343344 after 0.14 seconds
+[0m22:15:12.343741 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x00000158BC0BD350>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x00000158BC100050>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x00000158BBF29590>]}
+[0m22:15:12.344014 [debug] [MainThread]: Flushing usage events
+[0m22:15:12.731603 [debug] [MainThread]: An error was encountered while trying to flush usage events
+[0m22:15:32.746909 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000013FB6114980>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000013FB6BA8F50>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000013FB721FD90>]}
+
+
+============================== 22:15:32.752570 | 1392dfee-9f1a-494f-a3a3-6c77a150e1e6 ==============================
+[0m22:15:32.752570 [info ] [MainThread]: Running with dbt=1.11.0-b3
+[0m22:15:32.753477 [debug] [MainThread]: running dbt with arguments {'partial_parse': 'True', 'write_json': 'True', 'send_anonymous_usage_stats': 'True', 'use_colors': 'True', 'cache_selected_only': 'False', 'target_path': 'None', 'warn_error': 'None', 'invocation_command': 'dbt run', 'log_format': 'default', 'version_check': 'True', 'introspect': 'True', 'debug': 'False', 'printer_width': '80', 'fail_fast': 'False', 'no_print': 'None', 'empty': 'False', 'quiet': 'False', 'use_experimental_parser': 'False', 'log_cache_events': 'False', 'log_path': 'logs', 'indirect_selection': 'eager', 'profiles_dir': 'C:\\Users\\yamin\\.dbt', 'static_parser': 'True', 'warn_error_options': 'WarnErrorOptionsV2(error=[], warn=[], silence=[])'}
+[0m22:15:32.754024 [error] [MainThread]: Encountered an error:
+Runtime Error
+  No dbt_project.yml found at expected path C:\Users\yamin\OneDrive\Documents\healthcare-data-warehouse-snowflake-dbt\dbt_project.yml
+  Verify that each entry within packages.yml (and their transitive dependencies) contains a file named dbt_project.yml
+  
+[0m22:15:32.754854 [debug] [MainThread]: Command `dbt run` failed at 22:15:32.754744 after 0.16 seconds
+[0m22:15:32.755240 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000013FB725D350>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000013FB72B0050>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000013FB70C9590>]}
+[0m22:15:32.755649 [debug] [MainThread]: Flushing usage events
+[0m22:15:33.233716 [debug] [MainThread]: An error was encountered while trying to flush usage events
