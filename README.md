@@ -1,61 +1,94 @@
-# Healthcare Data Warehouse – Snowflake & dbt Project
+# 🏥 Healthcare Data Warehouse – Snowflake & dbt Project
 
-This project demonstrates how to build a **modern data warehouse** on **Snowflake** using **dbt (Data Build Tool)** for data transformation, modeling, and documentation.  
-It follows a layered architecture with separate schemas for raw, transformed, and analytics-ready data.
+This project builds a **modern healthcare data warehouse** using **Snowflake** for storage and **dbt (Data Build Tool)** for data transformation and modeling.  
+It demonstrates how to design a scalable architecture that integrates raw healthcare data, transforms it into clean, analytics-ready datasets, and supports data visualization and analysis.
 
 ---
 
-## 📁 Project Structure
+## 🎯 Objectives
 
-healthcare-data-warehouse-snowflake-dbt/
-│
-├── data/ # Raw CSV files (patients, claims, providers, conditions)
-│ ├── patients.csv
-│ ├── claims.csv
-│ ├── providers.csv
-│ └── conditions.csv
-│
-├── healthcare_project/ # Main dbt project
-│ ├── models/ # SQL models for staging & transformation
-│ │ ├── staging/
-│ │ │ └── stg_claims.sql
-│ │ ├── marts/
-│ │ └── schema.yml
-│ ├── dbt_project.yml # dbt project configuration
-│ └── README.md
-│
-├── scripts/ # Optional helper scripts (SQL, Python)
-├── venv/ # Python virtual environment (ignored in Git)
-└── .gitignore # Files & folders excluded from version control
+- Design a cloud-based data warehouse on Snowflake.  
+- Transform raw healthcare data into structured, analytics-ready layers using dbt.  
+- Implement modular SQL models for better maintainability and scalability.  
+- Automate documentation and testing using dbt’s built-in features.  
+- Prepare data for visualization in BI tools such as Power BI or Tableau.
 
-yaml
+---
+
+## 📊 Data Layers (Architecture)
+
+| Layer | Schema | Description |
+|-------|---------|-------------|
+| Raw | `HEALTHCARE_DB.RAW` | Stores raw ingested CSV data (Patients, Claims, Providers, Conditions). |
+| Staging | `HEALTHCARE_DB.TRANSFORMED` | Cleans, standardizes, and formats raw tables using dbt models. |
+| Marts | `HEALTHCARE_DB.MARTS` | (Future enhancement) Combines staging data for analytics and reporting. |
+
+---
+
+## 📈 Example KPIs
+
+- Total Patients by City / State  
+- Average Claim Amount per Provider  
+- Claim Approval Rate (%)  
+- Top Diagnosed Conditions by Severity  
+- Patient Demographics (Age, Gender)  
+
+---
+
+## 🧩 Key dbt Models
+
+| Model | Description |
+|--------|--------------|
+| `stg_claims.sql` | Cleans and standardizes claim data from the RAW layer. |
+| `stg_patients.sql` | Formats and enriches patient details. |
+| `stg_providers.sql` | Normalizes provider data for joins. |
+| `schema.yml` | Defines documentation and testing for dbt models. |
+
+Example `stg_claims.sql` model:
+```sql
+SELECT
+    CLAIM_ID,
+    PATIENT_ID,
+    PROVIDER_ID,
+    AMOUNT,
+    CLAIM_DATE,
+    UPPER(STATUS) AS CLAIM_STATUS
+FROM "HEALTHCARE_DB"."RAW"."CLAIMS";
+🧰 Tools & Technologies
+Snowflake – Cloud Data Warehouse
+
+dbt (Data Build Tool) – Data modeling, testing, and documentation
+
+Python (venv) – Virtual environment for dependency management
+
+Git & GitHub – Version control and collaboration
+
+Power BI / Tableau (optional) – Dashboard visualization
+
+⚙️ Setup Instructions
+1. Clone the Repository
+bash
 Copy code
-
----
-
-## ⚙️ Setup Instructions
-
-### 1. Clone the Repository
-```bash
 git clone https://github.com/yaminideconda/healthcare-data-warehouse-snowflake-dbt.git
 cd healthcare-data-warehouse-snowflake-dbt
-2. Create a Virtual Environment
+2. Create and Activate a Virtual Environment
 bash
 Copy code
 python -m venv venv
-source venv/bin/activate      # Mac/Linux
-venv\Scripts\activate         # Windows
+venv\Scripts\activate      # (Windows)
+# OR
+source venv/bin/activate   # (Mac/Linux)
 3. Install dbt for Snowflake
 bash
 Copy code
 pip install dbt-snowflake
 4. Configure Snowflake Connection
-Edit (or create) a file named profiles.yml under:
+Create or edit your profiles.yml file located at:
 
 makefile
 Copy code
 C:\Users\<your-username>\.dbt\profiles.yml
-Example configuration:
+Example:
 
 yaml
 Copy code
@@ -71,53 +104,49 @@ healthcare_project:
       database: HEALTHCARE_DB
       schema: TRANSFORMED
   target: dev
-🧠 How It Works
-Raw Layer (RAW schema):
-Contains source tables like PATIENTS, CLAIMS, PROVIDERS, and CONDITIONS.
-
-Staging Layer (TRANSFORMED schema):
-dbt models clean and standardize raw data.
-Example:
-
-sql
-Copy code
-SELECT
-    CLAIM_ID,
-    PATIENT_ID,
-    PROVIDER_ID,
-    AMOUNT,
-    CLAIM_DATE,
-    UPPER(STATUS) AS CLAIM_STATUS
-FROM "HEALTHCARE_DB"."RAW"."CLAIMS";
-Analytics Layer (MARTS schema):
-Future models can join across staging tables to produce analytics-ready datasets.
-
-🚀 Run the Project
+🚀 Run dbt Commands
 bash
 Copy code
-dbt debug        # Verify connection
-dbt run          # Execute models and create views/tables in Snowflake
-dbt test         # Run data quality tests
-dbt docs serve   # Launch interactive dbt documentation site
-Then open the local URL shown in the terminal (usually http://127.0.0.1:8080).
-
-✅ Example Output
-After running dbt run, you’ll see new views in Snowflake under:
+dbt debug        # Test connection to Snowflake
+dbt run          # Build all dbt models
+dbt test         # Run tests defined in schema.yml
+dbt docs generate
+dbt docs serve   # Launch interactive documentation in your browser
+After running, you’ll see models in Snowflake under:
 
 nginx
 Copy code
-HEALTHCARE_DB → TRANSFORMED → Tables/Views
-Example: STG_CLAIMS
+HEALTHCARE_DB → TRANSFORMED → Views
+🗂️ File Structure
+graphql
+Copy code
+healthcare-data-warehouse-snowflake-dbt/
+│
+├── data/                         # Raw CSV data files
+│   ├── claims.csv
+│   ├── patients.csv
+│   ├── providers.csv
+│   └── conditions.csv
+│
+├── healthcare_project/           # Main dbt project
+│   ├── models/
+│   │   ├── staging/
+│   │   │   └── stg_claims.sql
+│   │   └── schema.yml
+│   ├── macros/
+│   ├── seeds/
+│   └── dbt_project.yml
+│
+└── scripts/                      # Optional setup scripts
+💡 Future Enhancements
+Add incremental models for handling large data loads.
 
-🧩 Tools Used
-Snowflake – Cloud Data Warehouse
+Create data marts for Claims, Patients, and Provider analytics.
 
-dbt (Data Build Tool) – Data transformation, lineage, and testing
+Integrate Power BI dashboard for end-to-end reporting.
 
-Python – Virtual environment & dependency management
+Add data quality tests and CI/CD automation using GitHub Actions.
 
-Git & GitHub – Version control and project hosting
-
-📄 License
-This project is for educational and demonstration purposes.
-Feel free to fork and customize for your own data warehouse projects.
+🧾 Author
+Yamini Deconda
+Data Engineer | Snowflake Developer | dbt Practitioner
