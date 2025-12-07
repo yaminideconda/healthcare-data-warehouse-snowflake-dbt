@@ -70,8 +70,7 @@ Git & GitHub – Version control
 Power BI / Tableau (optional) – Dashboard and reporting layer
 
 🗂️ Project Structure
-text
-Copy code
+
 healthcare-data-warehouse-snowflake-dbt/
 │
 ├── data/                         # Raw CSV data files
@@ -94,13 +93,11 @@ healthcare-data-warehouse-snowflake-dbt/
 └── scripts/                      # Optional setup / helper scripts
 ⚙️ Getting Started
 1. Clone the repository
-bash
-Copy code
+
 git clone https://github.com/yaminideconda/healthcare-data-warehouse-snowflake-dbt.git
 cd healthcare-data-warehouse-snowflake-dbt
 2. Create and activate a virtual environment
-bash
-Copy code
+
 python -m venv venv
 
 # Windows
@@ -109,8 +106,7 @@ venv\Scripts\activate
 # Mac / Linux
 source venv/bin/activate
 3. Install dbt for Snowflake
-bash
-Copy code
+
 pip install dbt-snowflake
 4. Configure Snowflake connection
 Create or edit your profiles.yml file, typically located at:
@@ -121,8 +117,6 @@ Mac / Linux: /Users/<your-username>/.dbt/profiles.yml
 
 Example profile:
 
-yaml
-Copy code
 healthcare_project:
   outputs:
     dev:
@@ -140,8 +134,6 @@ Replace the placeholders with your own Snowflake credentials.
 🚀 Running dbt
 From the healthcare_project directory:
 
-bash
-Copy code
 dbt debug          # Test connection to Snowflake
 dbt run            # Build all dbt models
 dbt test           # Run tests defined in schema.yml
